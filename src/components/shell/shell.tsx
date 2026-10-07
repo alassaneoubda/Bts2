@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { logout } from "@/actions/auth";
 import { USERNAME } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { InstallButton } from "@/components/pwa/pwa";
 import { GlobalSearch } from "./search";
 
 type Counts = { participations: number; evaluations: number; students: number };
@@ -118,6 +119,7 @@ export function Shell({ counts, children }: { counts: Counts; children: React.Re
             <div className="lg:hidden font-bold text-[14px]">BTS2 CV-A</div>
           </div>
           <GlobalSearch />
+          <InstallButton />
         </header>
 
         <AnimatePresence>

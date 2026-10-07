@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { useActionState } from "react";
 import { login } from "@/actions/auth";
+import { InstallButton } from "@/components/pwa/pwa";
 import { USERNAME } from "@/lib/constants";
 
 export default function LoginPage() {
@@ -84,6 +85,9 @@ export default function LoginPage() {
             </motion.button>
             <div className="text-[11px] text-neutral-400 text-center mt-2">Mot de passe modifiable dans Paramètres</div>
           </form>
+          <div className="mt-4 flex justify-center">
+            <InstallButton className="h-9 px-4 rounded-full bg-black text-white text-[12px] font-semibold hover:bg-neutral-800 active:scale-95 transition" />
+          </div>
         </div>
       </motion.div>
     </div>
