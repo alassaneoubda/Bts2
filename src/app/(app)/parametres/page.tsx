@@ -10,7 +10,7 @@ export default async function SettingsPage() {
       <PageHeader title="Paramètres" subtitle="ESMA — 2A BTS Communication Visuelle — Groupe A — 2026-2027" />
       <Card>
         <div className="text-[13px] text-neutral-600">
-          BTS2 CV-A Gestion • {students.length} étudiants • {subjects.length} matières • données stockées dans Neon (Postgres)
+          BTS2 CV-A Gestion • {students.length} étudiants • {subjects.length} matières
         </div>
         <div className="grid sm:grid-cols-3 gap-4 mt-4 text-[13px]">
           <div>

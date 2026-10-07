@@ -118,9 +118,6 @@ export function Shell({ counts, children }: { counts: Counts; children: React.Re
             <div className="lg:hidden font-bold text-[14px]">BTS2 CV-A</div>
           </div>
           <GlobalSearch />
-          <div className="hidden md:flex items-center gap-2 text-[12px] text-neutral-500 whitespace-nowrap">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" /> Neon • {counts.students} élèves • {counts.evaluations} évals
-          </div>
         </header>
 
         <AnimatePresence>
