@@ -1,7 +1,9 @@
 import { cookies } from "next/headers";
+import { isSiteEnabled } from "./site";
 import { SESSION_COOKIE, SESSION_DURATION, signSession, verifySession } from "./session";
 
 export async function isAuthenticated() {
+  if (!isSiteEnabled()) return false;
   return verifySession((await cookies()).get(SESSION_COOKIE)?.value);
 }
 

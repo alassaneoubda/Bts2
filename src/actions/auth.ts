@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import { eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
 import { db, settings } from "@/db";
+import { isSiteEnabled } from "@/lib/site";
 import { createSession, destroySession, requireAuth } from "@/lib/auth";
 
 export type FormState = { error?: string; success?: string } | undefined;
@@ -14,6 +15,7 @@ async function getHash() {
 }
 
 export async function login(_: FormState, formData: FormData): Promise<FormState> {
+  if (!isSiteEnabled()) return { error: "Site désactivé." };
   const password = String(formData.get("password") ?? "");
   const hash = await getHash();
   if (!hash) return { error: "Base non initialisée : lancez `npm run db:seed`." };
